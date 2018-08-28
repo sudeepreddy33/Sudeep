@@ -1,51 +1,53 @@
-package com.mypackage;
+package com.myhibernate;
 
-final class Employee {
-	public static void main(String[] args) {
-		 Employee e=new Employee(100,"sudeep",4000);
-		System.out.println(e.empId);
-		System.out.println(e.empName);
-		System.out.println(e.salary);
-		 System.out.println(e.address);
-		
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "employee_1")
+public class Employee {
+	@Id
+	@Column(name = "empid")
+	int employeeId;
+	@Column(name = "empname")
+	String employeeName;
+	@Column(name = "empsalary")
+	int employeeSalary;
+	@Column(name = "empage")
+	int employeeAge;
+
+	public int getEmployeeId() {
+		return employeeId;
 	}
 
-	Employee(int empId, String empName, int salary) {
-		this.empId = empId;
-		this.empName = empName;
-		this.salary = salary;
+	public void setEmployeeId(int employeeId) {
+		this.employeeId = employeeId;
 	}
 
-	private final int empId;
-	private final String empName;
-	private final int salary;
-	Address address;
-
-	public int getEmpId() {
-		return empId;
+	public String getEmployeeName() {
+		return employeeName;
 	}
 
-	public String getEmpName() {
-		return empName;
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
 	}
 
-	public int getSalary() {
-		return salary;
+	public int getEmployeeSalary() {
+		return employeeSalary;
 	}
 
-	final void work() {
-		// this is one method.
-
+	public void setEmployeeSalary(int employeeSalary) {
+		this.employeeSalary = employeeSalary;
 	}
 
-	public class Address {
+	public int getEmployeeAge() {
+		return employeeAge;
+	}
 
-		public String line1;
-		public String line2;
-		public String city;
-		public String state;
-		public int zipcode;
-
+	public void setEmployeeAge(int employeeAge) {
+		this.employeeAge = employeeAge;
 	}
 
 }
